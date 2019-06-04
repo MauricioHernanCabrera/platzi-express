@@ -7,6 +7,9 @@
     "start": "node index",
     "dev": "nodemon index",
     "test": "mocha --exit",
+    "dev:inspect": "nodemon --inspect index",
+    "dev:debug": "set DEBUG=express:*,app:*& npm run dev",
+    "debug": "set DEBUG=express:*,app:*& npm run start",
     "test:cover": "nyc npm run test"
   },
   "author": "",
@@ -15,6 +18,7 @@
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "boom": "^7.3.0",
+    "debug": "^4.1.1",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",
@@ -36,6 +40,11 @@
   },
   "nyc": {
     "all": true,
-    "include": ["routes", "services", "lib", "utils"]
+    "include": [
+      "routes",
+      "services",
+      "lib",
+      "utils"
+    ]
   }
 }

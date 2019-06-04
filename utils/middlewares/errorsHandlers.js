@@ -1,7 +1,7 @@
 const { config } = require('./../../config')
 const boom = require('boom')
 const isRequestAjaxOrApi = require('./../../utils/isRequestAjaxOrApi')
-
+const debug = require('debug')('app:error')
 
 function withErrorStack (err, stack) {
     if (config.dev) {
@@ -18,7 +18,7 @@ function wrapErrors (err, req, res, next) {
 }
 
 function logErrors (err, req, res, next) {
-    console.log(err.stack)
+    debug(err.stack)
     next(err)
 }
 
