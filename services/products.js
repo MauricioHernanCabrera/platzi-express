@@ -12,9 +12,10 @@ class ProductsService {
         const products = await this.mongoDB.getAll(this.collection, query)
         return products || []
     }
-
+    
     async getProduct({ productId }) {
-        return Promise.resolve(productsMocks[0])
+        const product = await this.mongoDB.get(this.collection, productId)
+        return product || {}
     }
 
     async createProduct({ product }) {
@@ -22,6 +23,7 @@ class ProductsService {
     
         return createProductId;
     }
+    
     
     async updateProduct({ productId, product }) {
         const updateProductId = await this.mongoDB.update(
