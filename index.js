@@ -1,5 +1,5 @@
 const express = require('express')
-
+const cors = require('cors')
 const path = require('path')
 const bodyParser = require('body-parser');
 
@@ -23,6 +23,11 @@ const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi')
 // app
 const app = express()
 
+// cors
+// const corsOptions = { origin: 'http://example.com' }
+app.use(cors())
+
+// security
 app.use(helmet())
 
 // middleware

@@ -14,6 +14,7 @@ router.get('/', async function (req, res, next) {
     try {
         const { tags } = req.query
         const products = await productsService.getProducts({ tags })
+        console.log(config)
         res.render('products', { products, dev: config.dev })
     } catch (error) {
         next(error)
