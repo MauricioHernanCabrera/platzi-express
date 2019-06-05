@@ -16,10 +16,14 @@ const {
     errorHandler
 } = require('./utils/middlewares/errorsHandlers')
 
+const helmet = require('helmet')
+
 const isRequestAjaxOrApi = require('./utils/isRequestAjaxOrApi')
 
 // app
 const app = express()
+
+app.use(helmet())
 
 // middleware
 app.use(bodyParser.json())
