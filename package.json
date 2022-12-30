@@ -36,7 +36,7 @@
     "chalk": "^2.4.2",
     "clean-css-cli": "^4.3.0",
     "cross-env": "^5.2.0",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "nodemon": "^1.19.1",
     "nyc": "^14.1.1",
     "proxyquire": "^2.1.0",
